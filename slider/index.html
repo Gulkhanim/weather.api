@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("https://images.theconversation.com/files/232705/original/file-20180820-30593-1nxanpj.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop")
+        }
+        #content{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            margin: 10px;
+            box-shadow: 0 0 5px 5px rgb(121, 120, 120);
+            border-radius: 8px;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .title{
+            font-size: 22px;
+        }
+        .sub_title{
+            font-size: 16px;
+        }
+        .degree{
+            font-weight: bold;
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+<div class="contentCenter" style="display: flex;justify-content: center;margin-top: 50px;">
+    <div id="content">
+           
+            <div>
+                <h1 class="name">
+                    Qazagistan
+                </h1>
+                <img id="icon" src="https://openweathermap.org/img/wn/04n.png" alt="">
+                <div class="title">Buludlu</div>
+                <div class="sub_title">Parcali buludlu</div>
+                <div class="degree">21`C</div>
+            </div>
+           
+        </div> 
+    </div>
+        <script>
+
+let content = document.querySelector("#content");
+
+
+const dataArr = [
+    {
+        
+        title: 'Buludlu',
+        subTitle: "kulekli",
+        degree: "21`C",
+        picture: 'https://openweathermap.org/img/wn/04n.png',
+        name: "Ketelparag"
+
+    },
+    {
+       
+        title: 'Yagisli',
+        subTitle: "kulekli",
+        degree: "19`C",
+        picture: 'https://openweathermap.org/img/wn/09d@2x.png',
+        name: "Fuzuli"
+
+    },
+    {
+       
+        title: 'Buludlu',
+        subTitle: "kulekli",
+        degree: "25`C",
+        picture: 'https://openweathermap.org/img/wn/04n.png',
+        name: "Baku"
+
+    },
+    {
+       
+        title: 'Buludlu',
+        subTitle: "Gunesli",
+        degree: "28`C",
+        picture: 'https://openweathermap.org/img/wn/04n.png',
+        name: "London"
+
+    },
+    {
+        
+        title: 'Buludlu',
+        subTitle: "parcali buludlu",
+        degree: "18`C",
+        picture: 'https://openweathermap.org/img/wn/04n.png',
+        name: "Canada"
+
+    },
+    {
+       
+        title: 'Buludlu',
+        subTitle: "kulekli",
+        degree: "21`C",
+        picture: 'https://openweathermap.org/img/wn/04n.png',
+        name: "Denmark"
+
+    }
+    ]
+
+    let dataIndex = 0;
+
+    setInterval(addData,2000)
+
+    function addData() {
+    let lastDataIndex = dataArr.length - 1;
+    dataIndex = dataIndex === lastDataIndex ? 0 : dataIndex + 1
+   
+    content.innerHTML = ` <div>
+        <h1 class="name">
+                ${dataArr[dataIndex].name}
+            </h1>
+                <img id="icon" src="${dataArr[dataIndex].picture}" alt="">
+                <div class="title">${dataArr[dataIndex].title}</div>
+                <div class="sub_title">${dataArr[dataIndex].subTitle}</div>
+                <div class="degree">${dataArr[dataIndex].degree}</div>
+            </div>
+            
+        </div> `
+    console.log(dataIndex)
+}
+        </script>
+        </body>
+        </html>
